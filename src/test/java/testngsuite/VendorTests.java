@@ -38,22 +38,20 @@ public class VendorTests {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
-                chromeOptions.addArguments("--disable-gpu"); // safe fallback
+                chromeOptions.addArguments("--disable-gpu");
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-extensions");
-                // Do NOT set user-data-dir unless needed
-                // chromeOptions.addArguments("--headless=new"); // optionally headless
+
+                // Remove this:
+                // chromeOptions.addArguments("--user-data-dir=...");
+
+                // Optional: run headless in CI
+                if (System.getenv("CI") != null) {
+                    chromeOptions.addArguments("--headless=new");
+                }
+
                 driver = new ChromeDriver(chromeOptions);
                 break;
-
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.addArguments("-profile");
-                    firefoxOptions.addArguments(userDataDir);
-                    // firefoxOptions.addArguments("--headless"); // optional
-                    driver = new FirefoxDriver(firefoxOptions);
-                    break;
 
                 case "edge":
                     WebDriverManager.edgedriver().setup();
