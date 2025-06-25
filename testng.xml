@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="EdgeSuite" parallel="tests" thread-count="1">
-    <test name="EdgeTest">
-        <parameter name="browser" value="edge"/>
+<suite name="ChromeSuite" parallel="tests" thread-count="1">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="testngsuite.VendorTests"/>
         </classes>
