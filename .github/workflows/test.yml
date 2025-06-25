@@ -1,0 +1,31 @@
+name: Run TestNG Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'  # or 11 or whatever you're using
+
+    - name: Build and Run Tests
+      run: mvn clean test
+
+    - name: Upload TestNG Reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: testng-reports
+        path: test-output/
