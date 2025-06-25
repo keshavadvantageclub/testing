@@ -51,6 +51,7 @@ public class VendorTests {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("button[class*='Login_login']")).click();
+        System.out.println("Polling test");
 
         try {
             WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("select")));
