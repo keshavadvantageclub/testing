@@ -11,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Set up Java
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
-        java-version: '17'  # or 11 or whatever you're using
+        java-version: '17'  # or '11' if you're using that
 
     - name: Build and Run Tests
       run: mvn clean test
 
     - name: Upload TestNG Reports
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: testng-reports
         path: test-output/
