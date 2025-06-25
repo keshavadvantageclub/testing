@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [ChromeSuite]">
+  <test thread-count="1" parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testngsuite.VendorTests">
+        <methods>
+          <include name="testVendorSectionNavigation"/>
+          <include name="testVendorExtraction"/>
+          <include name="testCsvFileGenerated"/>
+          <include name="tearDown"/>
+          <include name="setUpAndLogin"/>
+        </methods>
+      </class> <!-- testngsuite.VendorTests -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [ChromeSuite] -->
