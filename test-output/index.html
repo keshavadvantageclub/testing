@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-ChromeSuite" class="navigator-link">
-              <span class="suite-name border-failed">ChromeSuite</span>
+              <span class="suite-name border-passed">ChromeSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,40 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,  2 skipped,  1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-ChromeSuite" class="hide-methods failed suite-ChromeSuite"> (hide)</a> <!-- hide-methods failed suite-ChromeSuite -->
-                      <a href="#" panel-name="suite-ChromeSuite" class="show-methods failed suite-ChromeSuite"> (show)</a> <!-- show-methods failed suite-ChromeSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-ChromeSuite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testVendorSectionNavigation">testVendorSectionNavigation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-ChromeSuite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-ChromeSuite" class="hide-methods skipped suite-ChromeSuite"> (hide)</a> <!-- hide-methods skipped suite-ChromeSuite -->
-                      <a href="#" panel-name="suite-ChromeSuite" class="show-methods skipped suite-ChromeSuite"> (show)</a> <!-- show-methods skipped suite-ChromeSuite -->
-                    </span>
-                    <div class="method-list-content skipped suite-ChromeSuite">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testCsvFileGenerated">testCsvFileGenerated</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testVendorExtraction">testVendorExtraction</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-ChromeSuite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -137,6 +104,21 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testCountrySelection">testCountrySelection</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testCsvFileGenerated">testCsvFileGenerated</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testVendorExtraction">testVendorExtraction</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ChromeSuite" title="testngsuite.VendorTests" class="method navigator-link" hash-for-method="testVendorSectionNavigation">testVendorSectionNavigation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-ChromeSuite -->
@@ -151,75 +133,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-ChromeSuite" class="panel ChromeSuite">
-          <div class="suite-ChromeSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testngsuite.VendorTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVendorSectionNavigation">
-                  </a> <!-- testVendorSectionNavigation -->
-                  <span class="method-name">testVendorSectionNavigation</span>
-                  <div class="stack-trace">java.lang.AssertionError: Vendor navigation failed: Expected condition failed: waiting for presence of any elements located by By.cssSelector: .Vendor_vendorComponentContainer__X65Vl (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: /tmp/profile-bdbae355-bc42-...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows 11, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.161.126:4444/sess..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 341a141af675b6c2c887d99bce667d0e
-	at testngsuite.VendorTests.testVendorSectionNavigation(VendorTests.java:126)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 16 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-ChromeSuite-class-failed -->
-          <div class="suite-ChromeSuite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">testngsuite.VendorTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCsvFileGenerated">
-                  </a> <!-- testCsvFileGenerated -->
-                  <span class="method-name">testCsvFileGenerated</span>
-                  <div class="stack-trace">java.lang.Throwable: Method testngsuite.VendorTests.testCsvFileGenerated() on instance testngsuite.VendorTests@4c12331b depends on not successfully finished methods 
-[testngsuite.VendorTests.testVendorExtraction() on instance testngsuite.VendorTests@4c12331b]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 8 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVendorExtraction">
-                  </a> <!-- testVendorExtraction -->
-                  <span class="method-name">testVendorExtraction</span>
-                  <div class="stack-trace">java.lang.Throwable: Method testngsuite.VendorTests.testVendorExtraction() on instance testngsuite.VendorTests@4c12331b depends on not successfully finished methods 
-[testngsuite.VendorTests.testVendorSectionNavigation() on instance testngsuite.VendorTests@4c12331b]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 8 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-ChromeSuite-class-skipped -->
           <div class="suite-ChromeSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -231,6 +144,27 @@ Session ID: 341a141af675b6c2c887d99bce667d0e
                   <a name="testCountrySelection">
                   </a> <!-- testCountrySelection -->
                   <span class="method-name">testCountrySelection</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCsvFileGenerated">
+                  </a> <!-- testCsvFileGenerated -->
+                  <span class="method-name">testCsvFileGenerated</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVendorExtraction">
+                  </a> <!-- testVendorExtraction -->
+                  <span class="method-name">testVendorExtraction</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVendorSectionNavigation">
+                  </a> <!-- testVendorSectionNavigation -->
+                  <span class="method-name">testVendorSectionNavigation</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -292,24 +226,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testVendorSectionNavigation')
 data.setCell(0, 2, 'testngsuite.VendorTests')
-data.setCell(0, 3, 24944);
+data.setCell(0, 3, 5369);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCountrySelection')
+data.setCell(1, 1, 'testVendorExtraction')
 data.setCell(1, 2, 'testngsuite.VendorTests')
-data.setCell(1, 3, 848);
+data.setCell(1, 3, 4047);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testCsvFileGenerated')
+data.setCell(2, 1, 'testCountrySelection')
 data.setCell(2, 2, 'testngsuite.VendorTests')
-data.setCell(2, 3, 0);
+data.setCell(2, 3, 448);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testVendorExtraction')
+data.setCell(3, 1, 'testCsvFileGenerated')
 data.setCell(3, 2, 'testngsuite.VendorTests')
-data.setCell(3, 3, 0);
+data.setCell(3, 3, 10);
 window.suiteTableData['ChromeSuite']= { tableData: data, tableDiv: 'times-div-ChromeSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 47 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-ChromeSuite">
               </div> <!-- times-div-ChromeSuite -->
             </div> <!-- times-div -->
@@ -342,17 +276,23 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCountrySelection</span>
-                <span class="method-start">21089 ms</span>
+                <span class="method-start">9077 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testVendorSectionNavigation</span>
-                <span class="method-start">21967 ms</span>
+                <span class="method-start">9533 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVendorExtraction</span>
+                <span class="method-start">14910 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCsvFileGenerated</span>
+                <span class="method-start">18964 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">46972 ms</span>
+                <span class="method-start">18982 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

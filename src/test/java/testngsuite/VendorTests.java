@@ -1,20 +1,20 @@
 package testngsuite;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.Optional;
-
 import utils.ExcelReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.io.*;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
@@ -29,49 +29,48 @@ public class VendorTests {
     @Parameters("browser")
     @BeforeClass
     public void setUpAndLogin(@Optional("chrome") String browser) {
-        String userDataDir = "/tmp/profile-" + UUID.randomUUID();
-        String gridURL = "http://10.0.161.126:4444";
+        String userDataDir = "user-data-dir-" + UUID.randomUUID(); // temp profile
 
         try {
-            MutableCapabilities capabilities;
-
             switch (browser.toLowerCase()) {
-                case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--no-sandbox");
-                    chromeOptions.addArguments("--disable-dev-shm-usage");
-                    chromeOptions.addArguments("--user-data-dir=" + userDataDir);
-                    // chromeOptions.addArguments("--headless=new"); // uncomment for headless
-                    capabilities = chromeOptions;
-                    break;
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--disable-gpu"); // safe fallback
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-extensions");
+                // Do NOT set user-data-dir unless needed
+                // chromeOptions.addArguments("--headless=new"); // optionally headless
+                driver = new ChromeDriver(chromeOptions);
+                break;
 
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("-profile");
                     firefoxOptions.addArguments(userDataDir);
-                    firefoxOptions.addArguments("--headless");
-                    capabilities = firefoxOptions;
+                    // firefoxOptions.addArguments("--headless"); // optional
+                    driver = new FirefoxDriver(firefoxOptions);
                     break;
 
                 case "edge":
                     WebDriverManager.edgedriver().setup();
                     EdgeOptions edgeOptions = new EdgeOptions();
                     edgeOptions.addArguments("--user-data-dir=" + userDataDir);
-                    capabilities = edgeOptions;
+                    driver = new EdgeDriver(edgeOptions);
                     break;
 
                 default:
                     throw new IllegalArgumentException("Unsupported browser: " + browser);
             }
 
-            driver = new RemoteWebDriver(new URL(gridURL), capabilities);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.manage().window().maximize();
             wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-            // Read login credentials
+            // Login
             Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
             String email = data[0][0].toString();
             String password = data[0][1].toString();
@@ -83,6 +82,7 @@ public class VendorTests {
 
             WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("select")));
             Assert.assertTrue(dropdown.isDisplayed(), "Login might have failed.");
+
         } catch (TimeoutException e) {
             Assert.fail("Login failed or dropdown not found.");
         } catch (Exception ex) {

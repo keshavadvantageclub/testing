@@ -9,39 +9,13 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">ChromeSuite</th></tr>
-<tr><td><a href="#t0">ChromeTest</a></td><td class="num">1</td><td class="num attn">2</td><td class="num">0</td><td class="num attn">1</td><td class="num">47,758</td><td></td><td></td></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">19,469</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">ChromeSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testngsuite.VendorTests</td><td><a href="#m0">testVendorSectionNavigation</a></td><td rowspan="1">1750841991756</td><td rowspan="1">24944</td></tr><tr><th colspan="4">ChromeTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="2">testngsuite.VendorTests</td><td><a href="#m1">testCsvFileGenerated</a></td><td rowspan="1">1750842016750</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m2">testVendorExtraction</a></td><td rowspan="1">1750842016722</td><td rowspan="1">0</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testngsuite.VendorTests</td><td><a href="#m3">testCountrySelection</a></td><td rowspan="1">1750841990878</td><td rowspan="1">848</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">ChromeSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">testngsuite.VendorTests</td><td><a href="#m0">testCountrySelection</a></td><td rowspan="1">1750842992345</td><td rowspan="1">448</td></tr><tr class="passedeven"><td><a href="#m1">testCsvFileGenerated</a></td><td rowspan="1">1750843002232</td><td rowspan="1">10</td></tr><tr class="passedeven"><td><a href="#m2">testVendorExtraction</a></td><td rowspan="1">1750842998178</td><td rowspan="1">4047</td></tr><tr class="passedeven"><td><a href="#m3">testVendorSectionNavigation</a></td><td rowspan="1">1750842992801</td><td rowspan="1">5369</td></tr></tbody>
 </table>
-<h2>ChromeTest</h2><h3 id="m0">testngsuite.VendorTests#testVendorSectionNavigation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Vendor navigation failed: Expected condition failed: waiting for presence of any elements located by By.cssSelector: .Vendor_vendorComponentContainer__X65Vl (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: /tmp/profile-bdbae355-bc42-...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows 11, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.161.126:4444/sess..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 341a141af675b6c2c887d99bce667d0e
-	at testngsuite.VendorTests.testVendorSectionNavigation(VendorTests.java:126)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">testngsuite.VendorTests#testCsvFileGenerated</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method testngsuite.VendorTests.testCsvFileGenerated() on instance testngsuite.VendorTests@4c12331b depends on not successfully finished methods 
-[testngsuite.VendorTests.testVendorExtraction() on instance testngsuite.VendorTests@4c12331b]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 8 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">testngsuite.VendorTests#testVendorExtraction</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method testngsuite.VendorTests.testVendorExtraction() on instance testngsuite.VendorTests@4c12331b depends on not successfully finished methods 
-[testngsuite.VendorTests.testVendorSectionNavigation() on instance testngsuite.VendorTests@4c12331b]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 8 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">testngsuite.VendorTests#testCountrySelection</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ChromeTest</h2><h3 id="m0">testngsuite.VendorTests#testCountrySelection</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testngsuite.VendorTests#testCsvFileGenerated</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testngsuite.VendorTests#testVendorExtraction</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testngsuite.VendorTests#testVendorSectionNavigation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

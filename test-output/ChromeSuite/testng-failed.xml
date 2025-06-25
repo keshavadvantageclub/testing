@@ -8,9 +8,10 @@
         <methods>
           <include name="testVendorSectionNavigation"/>
           <include name="testVendorExtraction"/>
+          <include name="testCountrySelection"/>
           <include name="testCsvFileGenerated"/>
-          <include name="tearDown"/>
           <include name="setUpAndLogin"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- testngsuite.VendorTests -->
     </classes>
