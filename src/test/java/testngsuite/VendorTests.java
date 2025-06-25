@@ -1,13 +1,14 @@
 package testngsuite;
-
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.edge.*;
+import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.*;
-import org.testng.annotations.Optional;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ExcelReader;
 import java.io.*;
@@ -25,39 +26,64 @@ public class VendorTests {
     @Parameters("browser")
     @BeforeClass
     public void setUpAndLogin(@Optional("chrome") String browser) {
-        if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        } else {
-            throw new IllegalArgumentException("Unsupported browser: " + browser);
-        }
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        // Read login credentials from Excel (first row only)
-        Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
-        String email = data[0][0].toString();
-        String password = data[0][1].toString();
-
-        driver.get("https://ac-react.advantageclub.co/signin");
-        driver.findElement(By.name("email")).sendKeys(email);
-        driver.findElement(By.name("password")).sendKeys(password);
-        driver.findElement(By.cssSelector("button[class*='Login_login']")).click();
-        
+        String userDataDir = "/tmp/profile-" + UUID.randomUUID();
 
         try {
+            switch (browser.toLowerCase()) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--headless=new"); // New headless for stability
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--user-data-dir=" + userDataDir);
+                    driver = new ChromeDriver(chromeOptions);
+                    break;
+
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("-profile");
+                    firefoxOptions.addArguments(userDataDir);
+                    firefoxOptions.addArguments("--headless");
+                    driver = new FirefoxDriver(firefoxOptions);
+                    break;
+
+                case "edge":
+                    // Skip Edge in CI to avoid Linux issues
+                    if (System.getenv("CI") != null) {
+                        throw new SkipException("Edge not supported on GitHub Actions Linux runners.");
+                    }
+                    WebDriverManager.edgedriver().setup();
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--user-data-dir=" + userDataDir);
+                    driver = new EdgeDriver(edgeOptions);
+                    break;
+
+                default:
+                    throw new IllegalArgumentException("Unsupported browser: " + browser);
+            }
+
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().maximize();
+            wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+            // Read login credentials from Excel (first row only)
+            Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
+            String email = data[0][0].toString();
+            String password = data[0][1].toString();
+
+            driver.get("https://ac-react.advantageclub.co/signin");
+            driver.findElement(By.name("email")).sendKeys(email);
+            driver.findElement(By.name("password")).sendKeys(password);
+            driver.findElement(By.cssSelector("button[class*='Login_login']")).click();
+
             WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("select")));
             Assert.assertTrue(dropdown.isDisplayed(), "Login might have failed.");
         } catch (TimeoutException e) {
             Assert.fail("Login failed or dropdown not found.");
+        } catch (Exception ex) {
+            Assert.fail("Setup failed: " + ex.getMessage());
         }
     }
 
@@ -79,19 +105,18 @@ public class VendorTests {
 
         try {
             WebElement countryDropdown = wait.until(ExpectedConditions.elementToBeClickable(
-                By.cssSelector("select.p3.h-16.koreanNoTranslate")));
+                    By.cssSelector("select.p3.h-16.koreanNoTranslate")));
             Select select = new Select(countryDropdown);
             select.selectByVisibleText("India");
 
             WebElement gurgaon = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[contains(@class,'LocationPopUp_zoneName') and text()='Gurgaon']")));
+                    By.xpath("//div[contains(@class,'LocationPopUp_zoneName') and text()='Gurgaon']")));
             gurgaon.click();
 
             List<WebElement> vendorList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
-                By.cssSelector(".Vendor_vendorComponentContainer__X65Vl")));
+                    By.cssSelector(".Vendor_vendorComponentContainer__X65Vl")));
 
             Assert.assertTrue(vendorList.size() > 0, "Vendor list not loaded.");
-
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Vendor navigation failed: " + e.getMessage());
