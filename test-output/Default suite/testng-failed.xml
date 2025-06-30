@@ -5,9 +5,9 @@
     <classes>
       <class name="testngsuite.HobbyClubTest">
         <methods>
+          <include name="testVerifyClubListingAndDetailMatch"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testJoinAndLeaveClub"/>
         </methods>
       </class> <!-- testngsuite.HobbyClubTest -->
     </classes>

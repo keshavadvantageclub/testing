@@ -114,12 +114,7 @@ public class HobbyClubTest {
 	    hobbyClubPage.postTextOnly(postText);
 	    hobbyClubPage.deleteBuzzPost(postText);
 	}
-//	
-//	@Test
-//	public void testDeleteAllBuzzPosts() throws InterruptedException {
-//	    hobbyClubPage.openFirstClub();
-//	    hobbyClubPage.deleteAllBuzzPosts();
-//	}
+
 	@Test(priority = 9)
 	public void testVerifyMemberCounts() {
 	    hobbyClubPage.verifyMemberCountsMatch();
@@ -134,6 +129,8 @@ public class HobbyClubTest {
 
 	@Test(priority = 11)
 	public void testJoinAndLeaveClub() {
+		hobbyClubPage.openFirstClub();
+
 	    hobbyClubPage.verifyJoinAndLeaveFunctionality();
 	}
 

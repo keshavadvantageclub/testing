@@ -803,40 +803,4 @@ public class HobbyClubPage {
 	    }
 	}
 
-
-
-//	public void deleteAllBuzzPosts() throws InterruptedException {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-//
-//		while (true) {
-//			List<WebElement> posts = driver.findElements(By.xpath("//div[contains(@class,'koreanNoTranslate')]"));
-//
-//			if (posts.isEmpty()) {
-//				System.out.println("✅ No more posts to delete.");
-//				break;
-//			}
-//
-//			boolean deletedAny = false;
-//
-//			for (WebElement post : posts) {
-//				String postText = post.getText().trim();
-//				if (postText.isEmpty()) {
-//					System.out.println("⚠️ Skipping empty post.");
-//					continue;
-//				}
-//
-//				System.out.println("🧹 Deleting post: " + postText);
-//				deleteBuzzPost(postText);
-//				deletedAny = true;
-//				Thread.sleep(1000);
-//				break; // Break so the DOM refreshes — avoid stale elements
-//			}
-//
-//			if (!deletedAny) {
-//				System.out.println("🚫 No deletable posts found.");
-//				break;
-//			}
-//		}
-//	}
-
 }
