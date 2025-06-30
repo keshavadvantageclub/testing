@@ -1,4 +1,5 @@
 package testngsuite;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.*;
@@ -21,42 +22,40 @@ public class HobbyClubTest {
 	@Parameters("suiteMode")
 	@BeforeClass
 	public void setUp(@Optional("false") String suiteMode) {
-	    WebDriverManager.chromedriver().setup();
-	    ChromeOptions options = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
 
-	    // 🧠 Always include this for CI/Actions
-	    if (System.getenv("CI") != null) {
-	        options.addArguments("--headless=new"); // Use modern headless mode
-	        options.addArguments("--no-sandbox");
-	        options.addArguments("--disable-dev-shm-usage");
-	        options.addArguments("--disable-gpu");
-	        options.addArguments("--window-size=1920,1080");
-	    }
+		// 🧠 Always include this for CI/Actions
+		if (System.getenv("CI") != null) {
+			options.addArguments("--headless=new"); // Use modern headless mode
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--window-size=1920,1080");
+		}
 
-	    driver = new ChromeDriver(options);
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-	    Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
-	    email = data[0][0].toString();
-	    password = data[0][1].toString();
+		Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
+		email = data[0][0].toString();
+		password = data[0][1].toString();
 
-	    loginPage = new LoginPage(driver, wait);
-	    hobbyClubPage = new HobbyClubPage(driver, wait);
+		loginPage = new LoginPage(driver, wait);
+		hobbyClubPage = new HobbyClubPage(driver, wait);
 
-	    loginPage.openLoginPage();
-	    loginPage.login(email, password);
-	    hobbyClubPage.openHobbyClubsPage();
-	    hobbyClubPage.selectCountryAndCityIfVisible("India", "Gurgaon");
+		loginPage.openLoginPage();
+		loginPage.login(email, password);
+		hobbyClubPage.openHobbyClubsPage();
+		hobbyClubPage.selectCountryAndCityIfVisible("India", "Gurgaon");
 	}
 
-
-    
-    @Test(priority = 1)
-    public void testVerifyClubListingAndDetailMatch() {
-        hobbyClubPage.verifyAllClubCardsAndDetails();
-    }
+	@Test(priority = 1)
+	public void testVerifyClubListingAndDetailMatch() {
+		hobbyClubPage.verifyAllClubCardsAndDetails();
+	}
 
 	@Test(priority = 2)
 	public void testPostBuzzInFirstClub() throws InterruptedException {
@@ -66,7 +65,7 @@ public class HobbyClubTest {
 		hobbyClubPage.verifyLastTextPost(buzz);
 	}
 
-	@Test(priority = 3, dependsOnMethods = "testPostBuzzInFirstClub")
+	@Test(priority = 3)
 	public void testPostAudioBuzz() {
 		String audioCaption = "AudioBuzz_" + System.currentTimeMillis();
 		String audioPath = "src/test/resources/sample_audio.mp3";
@@ -74,7 +73,7 @@ public class HobbyClubTest {
 		hobbyClubPage.verifyLastAudioPost(audioCaption);
 	}
 
-	@Test(priority = 4, dependsOnMethods = "testPostAudioBuzz")
+	@Test(priority = 4)
 	public void testPostVideoBuzz() {
 		String videoCaption = "VideoBuzz_" + System.currentTimeMillis();
 		String videoPath = "src/test/resources/sample_video.mp4";
@@ -106,35 +105,31 @@ public class HobbyClubTest {
 		hobbyClubPage.postTextOnly(postText);
 		hobbyClubPage.commentAndDeleteOnExistingPost(postText, commentText);
 	}
-	
+
 	@Test(priority = 8)
 	public void testDeleteBuzzPost() throws InterruptedException {
-		
-	    String postText = "DeleteOnlyBuzz_" + System.currentTimeMillis();
-	    hobbyClubPage.postTextOnly(postText);
-	    hobbyClubPage.deleteBuzzPost(postText);
+
+		String postText = "DeleteOnlyBuzz_" + System.currentTimeMillis();
+		hobbyClubPage.postTextOnly(postText);
+		hobbyClubPage.deleteBuzzPost(postText);
 	}
 
 	@Test(priority = 9)
 	public void testVerifyMemberCounts() {
-	    hobbyClubPage.verifyMemberCountsMatch();
+		hobbyClubPage.verifyMemberCountsMatch();
 	}
 
 	@Test(priority = 10)
 	public void testSearchAndValidateLukeCooperCardVisible() throws InterruptedException {
-	    hobbyClubPage.verifyMemberCardVisible("luke cooper");
+		hobbyClubPage.verifyMemberCardVisible("luke cooper");
 	}
-	
-
 
 	@Test(priority = 11)
 	public void testJoinAndLeaveClub() {
 		hobbyClubPage.openFirstClub();
 
-	    hobbyClubPage.verifyJoinAndLeaveFunctionality();
+		hobbyClubPage.verifyJoinAndLeaveFunctionality();
 	}
-
-
 
 	@AfterClass
 	public void tearDown() {
