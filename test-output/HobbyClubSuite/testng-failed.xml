@@ -6,12 +6,13 @@
     <classes>
       <class name="testngsuite.HobbyClubTest">
         <methods>
-          <include name="testVerifyClubListingAndDetailMatch"/>
-          <include name="verifyAllPostsAfterReload"/>
+          <include name="testPostBuzzAndClickLike"/>
+          <include name="testPostBuzzAndComment"/>
           <include name="testPostBuzzInFirstClub"/>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="testPostVideoBuzz"/>
+          <include name="testCommentAndDeleteExistingPost"/>
           <include name="testPostAudioBuzz"/>
         </methods>
       </class> <!-- testngsuite.HobbyClubTest -->

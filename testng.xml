@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="HobbyClubSuite" parallel="false" thread-count="1">
-  <test name="HobbyClubTest">
-    <parameter name="suiteMode" value="true"/>
-    <classes>
-      <class name="testngsuite.HobbyClubTest"/>
-    </classes>
-  </test>
+<suite name="Hobby Club Full Suite" parallel="false">
+    <parameter name="suiteMode" value="false"/>
+    <test name="All Hobby Club Tests">
+        <classes>
+            <class name="testngsuite.HobbyClubTest"/>
+        </classes>
+    </test>
 </suite>
