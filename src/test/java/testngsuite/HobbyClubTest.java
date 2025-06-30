@@ -18,31 +18,30 @@ public class HobbyClubTest {
 	String email, password;
 	boolean isSuiteMode;
 
-	@Parameters("suiteMode")
 	@BeforeClass
+	@Parameters("suiteMode")
 	public void setUp(@Optional("false") String suiteMode) {
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-		options.addArguments("--disable-dev-shm-usage", "--disable-gpu", "--no-sandbox", "--disable-extensions");
+	    WebDriverManager.chromedriver().setup();
 
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	    ChromeOptions options = new ChromeOptions();
 
-		Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
-		email = data[0][0].toString();
-		password = data[0][1].toString();
+	    // Check if headless is enabled (true by default in GitHub Actions)
+	    boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+	    if (isHeadless) {
+	        options.addArguments("--headless=new");
+	        options.addArguments("--window-size=1920,1080");
+	    }
 
-		loginPage = new LoginPage(driver, wait);
-		hobbyClubPage = new HobbyClubPage(driver, wait);
+	    options.addArguments("--disable-dev-shm-usage");
+	    options.addArguments("--no-sandbox");
+	    options.addArguments("--disable-gpu");
 
-		// Always login and open first club
-		loginPage.openLoginPage();
-		loginPage.login(email, password);
-		hobbyClubPage.openHobbyClubsPage();
-		hobbyClubPage.selectCountryAndCityIfVisible("India", "Gurgaon");
+	    driver = new ChromeDriver(options);
+	    driver.manage().window().maximize();
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	    wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+	    // Your login + setup code
 	}
 
     
@@ -103,7 +102,6 @@ public class HobbyClubTest {
 	@Test(priority = 8)
 	public void testDeleteBuzzPost() throws InterruptedException {
 		
-		hobbyClubPage.openFirstClub();
 	    String postText = "DeleteOnlyBuzz_" + System.currentTimeMillis();
 	    hobbyClubPage.postTextOnly(postText);
 	    hobbyClubPage.deleteBuzzPost(postText);
