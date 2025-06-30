@@ -18,31 +18,39 @@ public class HobbyClubTest {
 	String email, password;
 	boolean isSuiteMode;
 
-	@BeforeClass
 	@Parameters("suiteMode")
+	@BeforeClass
 	public void setUp(@Optional("false") String suiteMode) {
 	    WebDriverManager.chromedriver().setup();
-
 	    ChromeOptions options = new ChromeOptions();
 
-	    // Check if headless is enabled (true by default in GitHub Actions)
-	    boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
-	    if (isHeadless) {
-	        options.addArguments("--headless=new");
+	    // 🧠 Always include this for CI/Actions
+	    if (System.getenv("CI") != null) {
+	        options.addArguments("--headless=new"); // Use modern headless mode
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--disable-gpu");
 	        options.addArguments("--window-size=1920,1080");
 	    }
-
-	    options.addArguments("--disable-dev-shm-usage");
-	    options.addArguments("--no-sandbox");
-	    options.addArguments("--disable-gpu");
 
 	    driver = new ChromeDriver(options);
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-	    // Your login + setup code
+	    Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
+	    email = data[0][0].toString();
+	    password = data[0][1].toString();
+
+	    loginPage = new LoginPage(driver, wait);
+	    hobbyClubPage = new HobbyClubPage(driver, wait);
+
+	    loginPage.openLoginPage();
+	    loginPage.login(email, password);
+	    hobbyClubPage.openHobbyClubsPage();
+	    hobbyClubPage.selectCountryAndCityIfVisible("India", "Gurgaon");
 	}
+
 
     
     @Test(priority = 1)
