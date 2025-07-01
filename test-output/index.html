@@ -108,11 +108,6 @@
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testDeleteBuzzPost">testDeleteBuzzPost</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testJoinAndLeaveClub">testJoinAndLeaveClub</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -123,7 +118,12 @@
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testPostBuzzAndComment">testPostBuzzAndComment</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testSearchAndValidateLukeCooperCardVisible">testSearchAndValidateLukeCooperCardVisible</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testVerifyMemberCounts">testVerifyMemberCounts</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Single_Test_Run_Suite -->
@@ -137,7 +137,17 @@
                     <div class="method-list-content passed suite-Single_Test_Run_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testDeleteBuzzPost">testDeleteBuzzPost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testPostBuzzAndClickLike">testPostBuzzAndClickLike</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testPostBuzzAndComment">testPostBuzzAndComment</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -152,17 +162,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testSearchAndValidateLukeCooperCardVisible">testSearchAndValidateLukeCooperCardVisible</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testVerifyClubListingAndDetailMatch">testVerifyClubListingAndDetailMatch</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Single_Test_Run_Suite" title="testngsuite.HobbyClubTest" class="method navigator-link" hash-for-method="testVerifyMemberCounts">testVerifyMemberCounts</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Single_Test_Run_Suite -->
@@ -188,45 +188,21 @@
                   <a name="testCommentAndDeleteExistingPost">
                   </a> <!-- testCommentAndDeleteExistingPost -->
                   <span class="method-name">testCommentAndDeleteExistingPost</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1111, 1027)
-  (Session info: chrome=137.0.7151.120)
-Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cf2e0746f33ea3cd05e1f4fa12063ca1, clickElement {id=f.D87522FB2CB3F0F074A1DDD67C2CF11C.d.91357567D9C51418CF84100B191850E7.e.399}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50164}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50164/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (cf2e0746f33ea3cd05e1f4fa12063ca1)] -&gt; xpath: //span[contains(text(),&apos;Comment&apos;)]]
-Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at pages.HobbyClubPage.commentAndDeleteOnExistingPost(HobbyClubPage.java:566)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //span[@class=&apos;p3&apos; and text()=&apos;DeleteMe_1751353162194&apos;] (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at pages.HobbyClubPage.commentAndDeleteOnExistingPost(HobbyClubPage.java:571)
 	at testngsuite.HobbyClubTest.testCommentAndDeleteExistingPost(HobbyClubTest.java:170)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testDeleteBuzzPost">
-                  </a> <!-- testDeleteBuzzPost -->
-                  <span class="method-name">testDeleteBuzzPost</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1087, 849)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@class=&apos;p3&apos; and text()=&apos;DeleteMe_1751353162194&apos;]&quot;}
   (Session info: chrome=137.0.7151.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cf2e0746f33ea3cd05e1f4fa12063ca1, clickElement {id=f.D87522FB2CB3F0F074A1DDD67C2CF11C.d.91357567D9C51418CF84100B191850E7.e.405}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50164}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50164/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (cf2e0746f33ea3cd05e1f4fa12063ca1)] -&gt; xpath: //div[contains(@class,&apos;px-8&apos;) and normalize-space(text())=&apos;Delete&apos;]]
-Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
+Command: [0d5f6752344e9fed217ba7bb93ac3321, findElement {using=xpath, value=//span[@class=&apos;p3&apos; and text()=&apos;DeleteMe_1751353162194&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50407}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50407/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d5f6752344e9fed217ba7bb93ac3321
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -234,11 +210,14 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at pages.HobbyClubPage.deleteBuzzPost(HobbyClubPage.java:624)
-	at testngsuite.HobbyClubTest.testDeleteBuzzPost(HobbyClubTest.java:177)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 28 more
 ... Removed 28 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -252,8 +231,8 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50164}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50164/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50407}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50407/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d5f6752344e9fed217ba7bb93ac3321
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
 	at pages.HobbyClubPage.openFirstClub(HobbyClubPage.java:117)
@@ -272,8 +251,8 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50164}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50164/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50407}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50407/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d5f6752344e9fed217ba7bb93ac3321
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
 	at pages.HobbyClubPage.openFirstClub(HobbyClubPage.java:117)
@@ -285,18 +264,18 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testPostBuzzAndComment">
-                  </a> <!-- testPostBuzzAndComment -->
-                  <span class="method-name">testPostBuzzAndComment</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1111, 1027)
+                  <a name="testSearchAndValidateLukeCooperCardVisible">
+                  </a> <!-- testSearchAndValidateLukeCooperCardVisible -->
+                  <span class="method-name">testSearchAndValidateLukeCooperCardVisible</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (423, -25)
   (Session info: chrome=137.0.7151.120)
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cf2e0746f33ea3cd05e1f4fa12063ca1, clickElement {id=f.D87522FB2CB3F0F074A1DDD67C2CF11C.d.91357567D9C51418CF84100B191850E7.e.391}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50164}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50164/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (cf2e0746f33ea3cd05e1f4fa12063ca1)] -&gt; xpath: //span[contains(@class,&apos;FeedCommentSection_commentBtn&apos;)]]
-Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
+Command: [0d5f6752344e9fed217ba7bb93ac3321, clickElement {id=f.439E15CB6A79FDCECD7E3FE2CADFF187.d.5547B37B71A695AE5481B5EA5961E552.e.556}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50407}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50407/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0d5f6752344e9fed217ba7bb93ac3321)] -&gt; id: Members]
+Session ID: 0d5f6752344e9fed217ba7bb93ac3321
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -306,8 +285,38 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at pages.HobbyClubPage.postBuzzAndComment(HobbyClubPage.java:534)
-	at testngsuite.HobbyClubTest.testPostBuzzAndComment(HobbyClubTest.java:162)
+	at pages.HobbyClubPage.verifyMemberCardVisible(HobbyClubPage.java:689)
+	at testngsuite.HobbyClubTest.testSearchAndValidateLukeCooperCardVisible(HobbyClubTest.java:187)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyMemberCounts">
+                  </a> <!-- testVerifyMemberCounts -->
+                  <span class="method-name">testVerifyMemberCounts</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (423, -42)
+  (Session info: chrome=137.0.7151.120)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0d5f6752344e9fed217ba7bb93ac3321, clickElement {id=f.439E15CB6A79FDCECD7E3FE2CADFF187.d.5547B37B71A695AE5481B5EA5961E552.e.556}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\KESHAV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50407}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50407/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0d5f6752344e9fed217ba7bb93ac3321)] -&gt; id: Members]
+Session ID: 0d5f6752344e9fed217ba7bb93ac3321
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at pages.HobbyClubPage.verifyMemberCountsMatch(HobbyClubPage.java:660)
+	at testngsuite.HobbyClubTest.testVerifyMemberCounts(HobbyClubTest.java:182)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 28 stack frames
 </div> <!-- stack-trace -->
@@ -323,9 +332,23 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="testDeleteBuzzPost">
+                  </a> <!-- testDeleteBuzzPost -->
+                  <span class="method-name">testDeleteBuzzPost</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testPostBuzzAndClickLike">
                   </a> <!-- testPostBuzzAndClickLike -->
                   <span class="method-name">testPostBuzzAndClickLike</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPostBuzzAndComment">
+                  </a> <!-- testPostBuzzAndComment -->
+                  <span class="method-name">testPostBuzzAndComment</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -344,23 +367,9 @@ Session ID: cf2e0746f33ea3cd05e1f4fa12063ca1
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testSearchAndValidateLukeCooperCardVisible">
-                  </a> <!-- testSearchAndValidateLukeCooperCardVisible -->
-                  <span class="method-name">testSearchAndValidateLukeCooperCardVisible</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="testVerifyClubListingAndDetailMatch">
                   </a> <!-- testVerifyClubListingAndDetailMatch -->
                   <span class="method-name">testVerifyClubListingAndDetailMatch</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVerifyMemberCounts">
-                  </a> <!-- testVerifyMemberCounts -->
-                  <span class="method-name">testVerifyMemberCounts</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -422,47 +431,47 @@ data.addRows(11);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testVerifyClubListingAndDetailMatch')
 data.setCell(0, 2, 'testngsuite.HobbyClubTest')
-data.setCell(0, 3, 67578);
+data.setCell(0, 3, 68217);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testJoinAndLeaveClub')
+data.setCell(1, 1, 'testCommentAndDeleteExistingPost')
 data.setCell(1, 2, 'testngsuite.HobbyClubTest')
-data.setCell(1, 3, 20680);
+data.setCell(1, 3, 26737);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testPostAudioBuzz')
 data.setCell(2, 2, 'testngsuite.HobbyClubTest')
-data.setCell(2, 3, 20576);
+data.setCell(2, 3, 20635);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testPostVideoBuzz')
+data.setCell(3, 1, 'testJoinAndLeaveClub')
 data.setCell(3, 2, 'testngsuite.HobbyClubTest')
-data.setCell(3, 3, 7346);
+data.setCell(3, 3, 20597);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'testDeleteBuzzPost')
 data.setCell(4, 2, 'testngsuite.HobbyClubTest')
-data.setCell(4, 3, 7322);
+data.setCell(4, 3, 7789);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testPostBuzzAndComment')
+data.setCell(5, 1, 'testPostVideoBuzz')
 data.setCell(5, 2, 'testngsuite.HobbyClubTest')
-data.setCell(5, 3, 6664);
+data.setCell(5, 3, 7402);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testCommentAndDeleteExistingPost')
+data.setCell(6, 1, 'testPostBuzzInFirstClub')
 data.setCell(6, 2, 'testngsuite.HobbyClubTest')
-data.setCell(6, 3, 6611);
+data.setCell(6, 3, 6809);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testPostBuzzAndClickLike')
+data.setCell(7, 1, 'testPostBuzzAndComment')
 data.setCell(7, 2, 'testngsuite.HobbyClubTest')
-data.setCell(7, 3, 5847);
+data.setCell(7, 3, 5940);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testPostBuzzInFirstClub')
+data.setCell(8, 1, 'testPostBuzzAndClickLike')
 data.setCell(8, 2, 'testngsuite.HobbyClubTest')
-data.setCell(8, 3, 5253);
+data.setCell(8, 3, 5043);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testSearchAndValidateLukeCooperCardVisible')
+data.setCell(9, 1, 'testVerifyMemberCounts')
 data.setCell(9, 2, 'testngsuite.HobbyClubTest')
-data.setCell(9, 3, 5048);
+data.setCell(9, 3, 1255);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testVerifyMemberCounts')
+data.setCell(10, 1, 'testSearchAndValidateLukeCooperCardVisible')
 data.setCell(10, 2, 'testngsuite.HobbyClubTest')
-data.setCell(10, 3, 412);
+data.setCell(10, 3, 1134);
 window.suiteTableData['Single_Test_Run_Suite']= { tableData: data, tableDiv: 'times-div-Single_Test_Run_Suite'}
 return data;
 }
@@ -500,105 +509,105 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testVerifyClubListingAndDetailMatch</span>
-                <span class="method-start">13993 ms</span>
+                <span class="method-start">13289 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testVerifyClubListingAndDetailMatch status=SUCCESS method=HobbyClubTest.testVerifyC...)</span>
-                <span class="method-start">81578 ms</span>
+                <span class="method-start">81518 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testPostBuzzInFirstClub</span>
-                <span class="method-start">81588 ms</span>
+                <span class="method-start">81534 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testPostBuzzInFirstClub status=SUCCESS method=HobbyClubTest.testPostBuzzInFirstClub...)</span>
-                <span class="method-start">86843 ms</span>
+                <span class="method-start">88348 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testPostAudioBuzz</span>
-                <span class="method-start">86847 ms</span>
+                <span class="method-start">88351 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testPostAudioBuzz status=FAILURE method=HobbyClubTest.testPostAudioBuzz()[pri:3, in...)</span>
-                <span class="method-start">107448 ms</span>
+                <span class="method-start">109004 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testPostVideoBuzz</span>
-                <span class="method-start">107458 ms</span>
+                <span class="method-start">109007 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testPostVideoBuzz status=SUCCESS method=HobbyClubTest.testPostVideoBuzz()[pri:4, in...)</span>
-                <span class="method-start">114819 ms</span>
+                <span class="method-start">116413 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testPostBuzzAndClickLike</span>
-                <span class="method-start">114820 ms</span>
+                <span class="method-start">116415 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testPostBuzzAndClickLike status=SUCCESS method=HobbyClubTest.testPostBuzzAndClickLi...)</span>
-                <span class="method-start">120670 ms</span>
+                <span class="method-start">121464 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testPostBuzzAndComment</span>
-                <span class="method-start">120672 ms</span>
+                <span class="method-start">121468 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">updateLambdaStatus([TestResult name=testPostBuzzAndComment status=FAILURE method=HobbyClubTest.testPostBuzzAndComment()...)</span>
-                <span class="method-start">127340 ms</span>
+                <span class="method-name">updateLambdaStatus([TestResult name=testPostBuzzAndComment status=SUCCESS method=HobbyClubTest.testPostBuzzAndComment()...)</span>
+                <span class="method-start">127419 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testCommentAndDeleteExistingPost</span>
-                <span class="method-start">127349 ms</span>
+                <span class="method-start">127437 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testCommentAndDeleteExistingPost status=FAILURE method=HobbyClubTest.testCommentAnd...)</span>
-                <span class="method-start">133966 ms</span>
+                <span class="method-start">154177 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testDeleteBuzzPost</span>
+                <span class="method-start">154181 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">updateLambdaStatus([TestResult name=testDeleteBuzzPost status=SUCCESS method=HobbyClubTest.testDeleteBuzzPost()[pri:8, ...)</span>
+                <span class="method-start">161994 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testDeleteBuzzPost</span>
-                <span class="method-start">133969 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">updateLambdaStatus([TestResult name=testDeleteBuzzPost status=FAILURE method=HobbyClubTest.testDeleteBuzzPost()[pri:8, ...)</span>
-                <span class="method-start">141306 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
                 <span class="method-name">testVerifyMemberCounts</span>
-                <span class="method-start">141310 ms</span>
+                <span class="method-start">161995 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">updateLambdaStatus([TestResult name=testVerifyMemberCounts status=SUCCESS method=HobbyClubTest.testVerifyMemberCounts()...)</span>
-                <span class="method-start">141722 ms</span>
+                <span class="method-name">updateLambdaStatus([TestResult name=testVerifyMemberCounts status=FAILURE method=HobbyClubTest.testVerifyMemberCounts()...)</span>
+                <span class="method-start">163266 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testSearchAndValidateLukeCooperCardVisible</span>
-                <span class="method-start">141733 ms</span>
+                <span class="method-start">163270 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">updateLambdaStatus([TestResult name=testSearchAndValidateLukeCooperCardVisible status=SUCCESS method=HobbyClubTest.test...)</span>
-                <span class="method-start">146792 ms</span>
+                <span class="method-name">updateLambdaStatus([TestResult name=testSearchAndValidateLukeCooperCardVisible status=FAILURE method=HobbyClubTest.test...)</span>
+                <span class="method-start">164414 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testJoinAndLeaveClub</span>
-                <span class="method-start">146796 ms</span>
+                <span class="method-start">164418 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">updateLambdaStatus([TestResult name=testJoinAndLeaveClub status=FAILURE method=HobbyClubTest.testJoinAndLeaveClub()[pri...)</span>
-                <span class="method-start">167481 ms</span>
+                <span class="method-start">185017 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">167483 ms</span>
+                <span class="method-start">185019 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

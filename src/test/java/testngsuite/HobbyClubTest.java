@@ -172,14 +172,14 @@ public class HobbyClubTest {
 
 	@Test(priority = 8)
 	public void testDeleteBuzzPost() throws InterruptedException {
-		String postText = "DeleteOnlyBuzz_" + System.currentTimeMillis();
-		hobbyClubPage.postTextOnly(postText);
-		hobbyClubPage.deleteBuzzPost(postText);
+	    String postText = "DeleteOnlyBuzz_" + System.currentTimeMillis();
+	    hobbyClubPage.postTextOnly(postText);
+	    hobbyClubPage.deleteBuzzPost(postText);
 	}
 
 	@Test(priority = 9)
 	public void testVerifyMemberCounts() {
-		hobbyClubPage.verifyMemberCountsMatch();
+	    hobbyClubPage.verifyMemberCountsMatch();
 	}
 
 	@Test(priority = 10)
@@ -189,7 +189,6 @@ public class HobbyClubTest {
 
 	@Test(priority = 11)
 	public void testJoinAndLeaveClub() {
-		hobbyClubPage.openFirstClub();
 		hobbyClubPage.verifyJoinAndLeaveFunctionality();
 	}
 

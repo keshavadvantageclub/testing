@@ -644,6 +644,9 @@ public class HobbyClubPage {
 	public void verifyMemberCountsMatch() {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+	    // ⬆️ Scroll to top immediately to ensure visibility of all top elements
+	    ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+
 	    // 1. From <div><p>13</p><p>Members</p></div>
 	    WebElement numberOnly = wait.until(ExpectedConditions.presenceOfElementLocated(
 	        By.xpath("//div[p[text()='Members']]/p[1]")));
@@ -659,11 +662,10 @@ public class HobbyClubPage {
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", membersTab);
 	    membersTab.click();
 	    System.out.println("🟢 Clicked Members tab");
-	    
-	    WebElement thirdCountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
-	    	    By.xpath("//div[contains(text(),'Members (')]")));
-	    	int countFromTabSection = extractNumberFromText(thirdCountElement.getText());
 
+	    WebElement thirdCountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+	        By.xpath("//div[contains(text(),'Members (')]")));
+	    int countFromTabSection = extractNumberFromText(thirdCountElement.getText());
 
 	    // ✅ Assertions
 	    Assert.assertEquals(countFromTextInBracket, countFromNumberOnly, "❌ Mismatch: <p> vs 'Members (...)' (top)");
@@ -671,6 +673,7 @@ public class HobbyClubPage {
 
 	    System.out.println("✅ All member counts match: " + countFromNumberOnly);
 	}
+
 
 	// Helper method
 	private int extractNumberFromText(String text) {
