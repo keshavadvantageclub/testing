@@ -1,9 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Hobby Club Full Suite" parallel="false">
-    <parameter name="suiteMode" value="false"/>
-    <test name="All Hobby Club Tests">
-        <classes>
-            <class name="testngsuite.HobbyClubTest"/>
-        </classes>
-    </test>
+<suite name="Single Test Run Suite">
+  <parameter name="suiteMode" value="lambdatest"/>
+  <test name="Run Single Test">
+    <classes>
+      <class name="testngsuite.HobbyClubTest">
+        <methods>
+          <include name="testPostAudioBuzz"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
 </suite>

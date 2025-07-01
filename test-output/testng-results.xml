@@ -1,32 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-30T17:11:30 IST" name="Default suite" finished-at="2025-06-30T17:12:36 IST" duration-ms="65431">
+  <suite started-at="2025-07-01T11:41:31 IST" name="Single Test Run Suite" finished-at="2025-07-01T11:42:39 IST" duration-ms="67789">
     <groups>
     </groups>
-    <test started-at="2025-06-30T17:11:30 IST" name="Default test" finished-at="2025-06-30T17:12:36 IST" duration-ms="65431">
+    <test started-at="2025-07-01T11:41:31 IST" name="Run Single Test" finished-at="2025-07-01T11:42:39 IST" duration-ms="67789">
       <class name="testngsuite.HobbyClubTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testngsuite.HobbyClubTest@815b41f]" started-at="2025-06-30T17:11:30 IST" name="setUp" finished-at="2025-06-30T17:12:02 IST" duration-ms="31300" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testngsuite.HobbyClubTest@10683d9d]" started-at="2025-07-01T11:41:31 IST" name="setUp" finished-at="2025-07-01T11:42:30 IST" duration-ms="58148" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[false]]>
+                <![CDATA[lambdatest]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testJoinAndLeaveClub()[pri:11, instance:testngsuite.HobbyClubTest@815b41f]" started-at="2025-06-30T17:12:02 IST" name="testJoinAndLeaveClub" finished-at="2025-06-30T17:12:35 IST" duration-ms="33415" status="PASS">
+        <test-method signature="testPostAudioBuzz()[pri:3, instance:testngsuite.HobbyClubTest@10683d9d]" started-at="2025-07-01T11:42:30 IST" name="testPostAudioBuzz" finished-at="2025-07-01T11:42:36 IST" duration-ms="6750" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[❌ Failed to post audio: invalid argument: File not found : C:\Users\Keshav Srivastava\eclipse-workspace\testing\src\test\resources\sample_audio.mp3
+  (Session info: chrome=138.0.7204.50)
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [83c367ff2da115eb5b4698a00f54fa08, sendKeysToElement {id=f.14929B4F96F328F8DEBD0225D26FA776.d.660EBCE6B22FBD44DB309105427906E8.e.212, value=[Ljava.lang.CharSequence;@57c47a9e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.50, chrome: {chromedriverVersion: 138.0.7204.50 (0d4712a3edf9..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[RemoteWebDriver: chrome on windows (83c367ff2da115eb5b4698a00f54fa08)] -> css selector: input[type='file']]
+Session ID: 83c367ff2da115eb5b4698a00f54fa08]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: ❌ Failed to post audio: invalid argument: File not found : C:\Users\Keshav Srivastava\eclipse-workspace\testing\src\test\resources\sample_audio.mp3
+  (Session info: chrome=138.0.7204.50)
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [83c367ff2da115eb5b4698a00f54fa08, sendKeysToElement {id=f.14929B4F96F328F8DEBD0225D26FA776.d.660EBCE6B22FBD44DB309105427906E8.e.212, value=[Ljava.lang.CharSequence;@57c47a9e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.50, chrome: {chromedriverVersion: 138.0.7204.50 (0d4712a3edf9..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[RemoteWebDriver: chrome on windows (83c367ff2da115eb5b4698a00f54fa08)] -> css selector: input[type='file']]
+Session ID: 83c367ff2da115eb5b4698a00f54fa08
+at org.testng.Assert.fail(Assert.java:111)
+at pages.HobbyClubPage.postAudioOnly(HobbyClubPage.java:291)
+at testngsuite.HobbyClubTest.testPostAudioBuzz(HobbyClubTest.java:120)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testJoinAndLeaveClub -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testngsuite.HobbyClubTest@815b41f]" started-at="2025-06-30T17:12:35 IST" name="tearDown" finished-at="2025-06-30T17:12:36 IST" duration-ms="546" status="PASS">
+        </test-method> <!-- testPostAudioBuzz -->
+        <test-method is-config="true" signature="updateLambdaStatus(org.testng.ITestResult)[pri:0, instance:testngsuite.HobbyClubTest@10683d9d]" started-at="2025-07-01T11:42:36 IST" name="updateLambdaStatus" finished-at="2025-07-01T11:42:38 IST" duration-ms="1268" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testPostAudioBuzz status=FAILURE method=HobbyClubTest.testPostAudioBuzz()[pri:3, instance:testngsuite.HobbyClubTest@10683d9d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateLambdaStatus -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testngsuite.HobbyClubTest@10683d9d]" started-at="2025-07-01T11:42:38 IST" name="tearDown" finished-at="2025-07-01T11:42:39 IST" duration-ms="1547" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testngsuite.HobbyClubTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Run Single Test -->
+  </suite> <!-- Single Test Run Suite -->
 </testng-results>

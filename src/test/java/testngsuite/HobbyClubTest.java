@@ -3,12 +3,20 @@ package testngsuite;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.*;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HobbyClubPage;
 import pages.LoginPage;
 import utils.ExcelReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 import java.time.Duration;
+import java.net.URI;
+import java.net.URL;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.MutableCapabilities;
+
+import java.io.File;
 
 public class HobbyClubTest {
 
@@ -18,27 +26,81 @@ public class HobbyClubTest {
 	HobbyClubPage hobbyClubPage;
 	String email, password;
 	boolean isSuiteMode;
+	
+	
+	private String getMediaPath(String relativePath) {
+		File file = new File(relativePath);
 
-	@Parameters("suiteMode")
+		if (isSuiteMode) {
+			// LambdaTest expects cloud URLs
+			String cloudUrlPrefix = "https://lt-upload.lambdatest.com/sample/";
+			return cloudUrlPrefix + file.getName(); // example: https://lt-upload.lambdatest.com/sample/sample_audio.mp3
+		} else {
+			// Local absolute path
+			return file.getAbsolutePath();
+		}
+	}
+
+
+	@Parameters({ "suiteMode" })
 	@BeforeClass
-	public void setUp(@Optional("false") String suiteMode) {
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
+	public void setUp(@Optional("local") String suiteMode) throws Exception {
+		isSuiteMode = suiteMode.equalsIgnoreCase("lambdatest");
 
-		// 🧠 Always include this for CI/Actions
-		if (System.getenv("CI") != null) {
-			options.addArguments("--headless=new"); // Use modern headless mode
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--disable-gpu");
-			options.addArguments("--window-size=1920,1080");
+		if (isSuiteMode) {
+			String username = System.getenv("LT_USERNAME");
+			String accessKey = System.getenv("LT_ACCESS_KEY");
+
+			// Fallback credentials for local/dev
+			if (username == null || accessKey == null) {
+				username = "keshavs";
+				accessKey = "w7VX6i299beNSNd3PHgaepmemLtMpEbYS0ePnvJEV69Bmog1cN";
+			}
+
+			MutableCapabilities capabilities = new MutableCapabilities();
+			capabilities.setCapability("browserName", "Chrome");
+			capabilities.setCapability("browserVersion", "latest");
+
+			MutableCapabilities ltOptions = new MutableCapabilities();
+			ltOptions.setCapability("platformName", "Windows 11");
+			ltOptions.setCapability("project", "Hobby Club Automation");
+			ltOptions.setCapability("build", "HobbyClubTest_" + System.currentTimeMillis());
+			ltOptions.setCapability("name", "HobbyClubTest");
+			ltOptions.setCapability("selenium_version", "4.14.0");
+
+			// ✅ Turn on all logs
+			ltOptions.setCapability("console", "true");
+			ltOptions.setCapability("network", "true");
+			ltOptions.setCapability("visual", "true");
+			ltOptions.setCapability("seleniumLogs", "true");
+			ltOptions.setCapability("driverLogs", "true");
+
+			capabilities.setCapability("LT:Options", ltOptions);
+
+			URI uri = new URI("https", username + ":" + accessKey, "hub.lambdatest.com", 443, "/wd/hub", null, null);
+			driver = new RemoteWebDriver(uri.toURL(), capabilities);
+
+		} else {
+			// Local setup
+			WebDriverManager.chromedriver().setup();
+
+			// ✅ Optional: enable local ChromeDriver verbose logging
+			new File("logs").mkdirs(); // create logs directory if not exists
+			System.setProperty("webdriver.chrome.verboseLogging", "true");
+			System.setProperty("webdriver.chrome.logfile", "logs/chromedriver.log");
+
+			ChromeOptions options = new ChromeOptions();
+			if (System.getenv("CI") != null) {
+				options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage",
+						"--disable-gpu", "--window-size=1920,1080");
+			}
+			driver = new ChromeDriver(options);
 		}
 
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
+		// Login & Navigation
 		Object[][] data = ExcelReader.getData("src/test/resources/testdata.xlsx", "LoginData");
 		email = data[0][0].toString();
 		password = data[0][1].toString();
@@ -51,6 +113,9 @@ public class HobbyClubTest {
 		hobbyClubPage.openHobbyClubsPage();
 		hobbyClubPage.selectCountryAndCityIfVisible("India", "Gurgaon");
 	}
+	
+	
+	
 
 	@Test(priority = 1)
 	public void testVerifyClubListingAndDetailMatch() {
@@ -67,6 +132,7 @@ public class HobbyClubTest {
 
 	@Test(priority = 3)
 	public void testPostAudioBuzz() {
+		hobbyClubPage.openFirstClub();
 		String audioCaption = "AudioBuzz_" + System.currentTimeMillis();
 		String audioPath = "src/test/resources/sample_audio.mp3";
 		hobbyClubPage.postAudioOnly(audioPath, audioCaption);
@@ -83,7 +149,6 @@ public class HobbyClubTest {
 
 	@Test(priority = 5)
 	public void testPostBuzzAndClickLike() throws InterruptedException {
-
 		String buzz = "LikeBuzz_" + System.currentTimeMillis();
 		hobbyClubPage.postTextOnly(buzz);
 		hobbyClubPage.clickNewLikeIconForBuzz(buzz);
@@ -91,7 +156,6 @@ public class HobbyClubTest {
 
 	@Test(priority = 6)
 	public void testPostBuzzAndComment() throws InterruptedException {
-
 		String buzz = "CommentBuzz_" + System.currentTimeMillis();
 		String comment = "Comment_" + System.currentTimeMillis();
 		hobbyClubPage.postBuzzAndComment(buzz, comment);
@@ -99,7 +163,6 @@ public class HobbyClubTest {
 
 	@Test(priority = 7)
 	public void testCommentAndDeleteExistingPost() throws InterruptedException {
-
 		String postText = "DeleteBuzz_" + System.currentTimeMillis();
 		String commentText = "DeleteMe_" + System.currentTimeMillis();
 		hobbyClubPage.postTextOnly(postText);
@@ -108,7 +171,6 @@ public class HobbyClubTest {
 
 	@Test(priority = 8)
 	public void testDeleteBuzzPost() throws InterruptedException {
-
 		String postText = "DeleteOnlyBuzz_" + System.currentTimeMillis();
 		hobbyClubPage.postTextOnly(postText);
 		hobbyClubPage.deleteBuzzPost(postText);
@@ -127,8 +189,15 @@ public class HobbyClubTest {
 	@Test(priority = 11)
 	public void testJoinAndLeaveClub() {
 		hobbyClubPage.openFirstClub();
-
 		hobbyClubPage.verifyJoinAndLeaveFunctionality();
+	}
+
+	@AfterMethod
+	public void updateLambdaStatus(ITestResult result) {
+		if (isSuiteMode) {
+			String status = result.isSuccess() ? "passed" : "failed";
+			((JavascriptExecutor) driver).executeScript("lambda-status=" + "\"" + status + "\"");
+		}
 	}
 
 	@AfterClass
