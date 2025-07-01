@@ -81,20 +81,21 @@ public class HobbyClubTest {
 			driver = new RemoteWebDriver(uri.toURL(), capabilities);
 
 		} else {
-			// Local setup
-			WebDriverManager.chromedriver().setup();
+		    // Local setup
+		    WebDriverManager.chromedriver().setup();
 
-			// ✅ Optional: enable local ChromeDriver verbose logging
-			new File("logs").mkdirs(); // create logs directory if not exists
-			System.setProperty("webdriver.chrome.verboseLogging", "true");
-			System.setProperty("webdriver.chrome.logfile", "logs/chromedriver.log");
+		    new File("logs").mkdirs();
+		    System.setProperty("webdriver.chrome.verboseLogging", "true");
+		    System.setProperty("webdriver.chrome.logfile", "logs/chromedriver.log");
 
-			ChromeOptions options = new ChromeOptions();
-			if (System.getenv("CI") != null) {
-				options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage",
-						"--disable-gpu", "--window-size=1920,1080");
-			}
-			driver = new ChromeDriver(options);
+		    ChromeOptions options = new ChromeOptions();
+		    if (System.getenv("CI") != null) {
+		        options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage",
+		                "--disable-gpu", "--window-size=1920,1080");
+		    }
+
+		    driver = new ChromeDriver(options);
+		    driver.manage().window().maximize(); // ✅ Add this line to maximize window in local mode
 		}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

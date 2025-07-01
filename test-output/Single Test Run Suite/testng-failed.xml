@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Single Test Run Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="suiteMode" value="lambdatest"/>
-  <test thread-count="5" name="Run Single Test(failed)">
+  <parameter name="suiteMode" value="local"/>
+  <test thread-count="5" name="Run All Tests(failed)">
     <classes>
       <class name="testngsuite.HobbyClubTest">
         <methods>
+          <include name="testPostBuzzAndComment"/>
           <include name="updateLambdaStatus"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="testJoinAndLeaveClub"/>
+          <include name="testDeleteBuzzPost"/>
+          <include name="testCommentAndDeleteExistingPost"/>
           <include name="testPostAudioBuzz"/>
         </methods>
       </class> <!-- testngsuite.HobbyClubTest -->
     </classes>
-  </test> <!-- Run Single Test(failed) -->
+  </test> <!-- Run All Tests(failed) -->
 </suite> <!-- Failed suite [Single Test Run Suite] -->

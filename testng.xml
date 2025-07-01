@@ -1,13 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Single Test Run Suite">
-  <parameter name="suiteMode" value="lambdatest"/>
-  <test name="Run Single Test">
+  <parameter name="suiteMode" value="local"/>
+  <test name="Run All Tests">
     <classes>
-      <class name="testngsuite.HobbyClubTest">
-        <methods>
-          <include name="testPostAudioBuzz"/>
-        </methods>
-      </class>
+      <class name="testngsuite.HobbyClubTest"/>
     </classes>
   </test>
 </suite>
